@@ -30,6 +30,7 @@ def predict():
    result = "You have amemic disease"
  text = "Hence, based on calculation:"
  return render_template("predict.html", prediction_text=text + str(result))
+
 if __name__ == "__main__":
     app.run(debug= False, port = 5000)
 

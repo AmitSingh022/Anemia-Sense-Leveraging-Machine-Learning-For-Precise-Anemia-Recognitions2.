@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 0.9em;
+        }
+        .nav-links a.active {
+            color: #ff5c5c;
+            font-weight: bold;
+        }
+        .check-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Hero Section */
+       .hero {
+    background-image: url("AnemiaImage.png"); /* Make sure this image is in the same folder as your HTML file */
+    background-size: cover; /* 'cover' fills the screen proportionally */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1em;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .container {
+            display: flex;
+            padding: 50px;
+            gap: 40px;
+            flex-wrap: wrap;
+            background-color: white;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h2 {
+            color: #ff5c5c;
+        }
+        .about-text p {
+            font-size: 0.95em;
+            color: #333;
+        }
+        .cards {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card-icon {
+            font-size: 1.5em;
+            color: #ff5c5c;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Prediction Form Section */
+        .form-section {
+            padding: 50px;
+            background-color: white;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f1f1f1;
+            padding: 20px 50px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Scroll Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5c5c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Anemia</div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#predict">Predict</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <!-- <img src="AnemiaImage.jpeg" alt="Random Image"/> -->
+        <h1>Anemia Predictor: Your Health Guardian</h1>
+        <p>Empowering you with early detection for better management and healthier living</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="container" id="about">
+        <div class="about-text">
+            <h2>About</h2>
+            <p>Anemia: low red blood cells or hemoglobin, causing oxygen shortage. Symptoms: fatigue, weakness, shortness of breath, pale skin. Causes: nutritional deficiencies, diseases, blood loss. Treatments vary.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🩸</div>
+                <h3>Hemoglobin</h3>
+                <p>Hemoglobin, a protein in red blood cells, transports oxygen and carbon dioxide. Healthy ranges: Men: 13.2-16.6 g/dL. Women: 11.6-15 g/dL.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧪</div>
+                <h3>MCH</h3>
+                <p>An MCH value refers to the average quantity of hemoglobin present in a single red blood cell. The normal range for MCH is between 27.5 and 33.2 pg.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>MCHC</h3>
+                <p>The mean corpuscular hemoglobin concentration is average concentration of hemoglobin in red blood cells. Normal: 33.4–35.5g/dL.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📏</div>
+                <h3>MCV</h3>
+                <p>MCV stands for mean corpuscular volume. Measures average red blood cell size. Normal range: 80 to 100 fL.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prediction Form Section -->
+    <div class="form-section" id="predict">
+        <h2>Enter the details for Anemia Disease Prediction </h2>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Gender">Gender (1 = Male, 0 = Female):</label><br>
+                <input type="number" step="any" name="Gender" required><br><br>
+            </div>
+            <div class="form-group">
+               <label for="Hemoglobin">Hemoglobin (Range: 7-16g):</label><br>
+               <input type="number" step="any" name="Hemoglobin" required><br><br>
+            </div>
+            <div class="form-group">
+                <label for="MCH">Mean Corpuscular Hemoglobin (Range: 16 - 36%):</label><br>
+                <input type="number" step="any" name="MCH" required><br><br>
+            </div>
+            <div class="form-group">
+                <label for="MCHC">Mean Corpuscular Hemoglobin Concentration (Range: 28 - 34g):</label><br>
+                <input type="number" step="any" name="MCHC" required><br><br>
+            </div>
+            <div class="form-group">
+                      <label for="MCV">Mean Corpuscular Volume (Range: 70 - 100fL):</label><br>
+                      <input type="number" step="any" name="MCV" required><br><br>
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="contact">
+        Contact Us
+        <h2>+91 9250417344</h2>
+    </div>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+</body>
+</html>
